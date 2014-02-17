@@ -4,7 +4,9 @@ public class Player : MonoBehaviour
 {
 
     public float PlayerSpeed;
-    public GameObject ProjectilePrefab;	
+    public GameObject ProjectilePrefab;
+    public static int Score = 0;
+    public static int Lives = 3;
 	
 	// Update is called once per frame
 	void Update ()
@@ -27,4 +29,15 @@ public class Player : MonoBehaviour
             Instantiate(ProjectilePrefab, position, Quaternion.identity);
 	    }
 	}
+
+    void OnGUI()
+    {
+        BuildUI();
+    }
+
+    void BuildUI()
+    {
+        GUI.Label(new Rect(10, 10, 60, 20), "Score: " + Score);
+        GUI.Label(new Rect(10, 30, 60, 20), "Lives: " + Lives);
+    }
 }
