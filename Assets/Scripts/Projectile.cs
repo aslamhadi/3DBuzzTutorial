@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float ProjectileSpeed;    
+    public float ProjectileSpeed;
+    public GameObject ExplosionPrefab;
 
     private Transform _projectileTransform;
 
@@ -34,9 +35,10 @@ public class Projectile : MonoBehaviour
             //DestroyObject(otherObject.gameObject);
 
             var enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
+            Instantiate(ExplosionPrefab, enemy.transform.position, enemy.transform.rotation);
             enemy.SetSpeedAndPosition();
 
-            Destroy(gameObject);
+            Destroy(gameObject);            
         }
     }
 }
