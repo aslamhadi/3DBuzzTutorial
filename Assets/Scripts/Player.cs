@@ -5,12 +5,7 @@ public class Player : MonoBehaviour
 {
 
     public float PlayerSpeed;
-
-	// Use this for initialization
-    //void Start ()
-    //{
-    //    transform.position = new Vector3(2, 1, transform.position.z);	    
-    //}
+    public GameObject ProjectilePrefab;	
 	
 	// Update is called once per frame
 	void Update ()
@@ -25,6 +20,12 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(7.4f, transform.position.y, transform.position.z);
         else if (transform.position.x >= 7.5f)
             transform.position = new Vector3(-7.4f, transform.position.y, transform.position.z);
-                
+
+	    if (Input.GetKeyDown("space"))
+	    {
+            //Fire projectile
+            Vector3 position = new Vector3(transform.position.x, transform.position.y + (transform.localScale.y/2));
+            Instantiate(ProjectilePrefab, position, Quaternion.identity);
+	    }
 	}
 }
