@@ -32,12 +32,7 @@ public class Player : MonoBehaviour
 
     void OnGUI()
     {
-        BuildUI();
-    }
-
-    void BuildUI()
-    {
-        GUI.Label(new Rect(10, 10, 60, 20), "Score: " + Score);
-        GUI.Label(new Rect(10, 30, 60, 20), "Lives: " + Lives);
+        GUI.Label(new Rect(10, 10, 120, 20), "Score: " + Score);
+        GUI.Label(new Rect(10, 30, 80, 20), "Lives: " + Lives);
     }
 }

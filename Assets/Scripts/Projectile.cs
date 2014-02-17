@@ -38,7 +38,9 @@ public class Projectile : MonoBehaviour
             Instantiate(ExplosionPrefab, enemy.transform.position, enemy.transform.rotation);
             enemy.SetSpeedAndPosition();
 
-            Destroy(gameObject);            
+            Destroy(gameObject);
+
+            Player.Score += 100;
         }
     }
 }
