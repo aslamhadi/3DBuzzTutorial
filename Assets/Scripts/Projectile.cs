@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Security.Cryptography;
+using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
@@ -24,4 +25,18 @@ public class Projectile : MonoBehaviour
         if(_projectileTransform.position.y >= 6.4f)
             Destroy(gameObject);
 	}
+
+    void OnTriggerEnter(Collider otherObject)
+    {
+        if (otherObject.tag == "enemy")
+        {
+            //to destroy the object
+            //DestroyObject(otherObject.gameObject);
+
+            var enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
+            enemy.SetSpeedAndPosition();
+
+            Destroy(gameObject);
+        }
+    }
 }

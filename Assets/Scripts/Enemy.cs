@@ -10,10 +10,8 @@ public class Enemy : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {        
-        _y = 7.0f;
-        _z = 0.0f;
-        SetSpeedAndPositionX();        
+    {                
+        SetSpeedAndPosition();        
     }
 
     // Update is called once per frame
@@ -24,13 +22,15 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.y <= -5)
         {
-            SetSpeedAndPositionX();            
+            SetSpeedAndPosition();            
         }
     }
 
-    void SetSpeedAndPositionX()
+    public void SetSpeedAndPosition()
     {
         _currentSpeed = Random.Range(MinSpeed, MaxSpeed);
+        _y = 7.0f;
+        _z = 0.0f;
         _x = Random.Range(-6f, 6f);
         transform.position = new Vector3(_x, _y, _z);
     }
