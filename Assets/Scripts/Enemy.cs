@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
 
         if (transform.position.y <= -5)
         {
-            SetSpeedAndPosition();            
+            SetSpeedAndPosition();
+            Player.Missed++;
         }
     }
 
