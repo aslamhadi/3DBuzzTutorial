@@ -38,8 +38,10 @@ public class Projectile : MonoBehaviour
             enemy.SetSpeedAndPosition();
 
             Destroy(gameObject);
-
             Player.Score += 100;
+
+            if(Player.Score >= 1000)
+                Application.LoadLevel(3);
         }
     }
 }

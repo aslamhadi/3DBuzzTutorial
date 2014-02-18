@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class Lose : MonoBehaviour
-{    
-    private const string LoseGame = "Game Over\nPress to play again";
+public class Win : MonoBehaviour
+{
+    private const string LoseGame = "You Win\nPress to play again";
     private const int ButtonWidth = 200;
     private const int ButtonHeight = 50;
 
@@ -22,5 +22,5 @@ public class Lose : MonoBehaviour
         Player.Score = 0;
         Player.Lives = 3;
         Player.Missed = 0;
-    }
+    }    
 }
